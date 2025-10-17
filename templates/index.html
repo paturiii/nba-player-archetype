@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <title>Homepage</title>
+</head>
+<body>
+
+    <div class='main'>
+
+        <h1>Generic Title</h1>
+                
+        <form method="GET" action="{{ url_for('search') }}" role="search">
+            <label for="search">Search for stuff</label>
+            <input name="q" id="search" type="search" placeholder="Search..." autofocus required />
+            <button type="submit">Go</button>    
+        </form>
+
+
+        <div class="ball-img">
+            <img src="ball.png" alt="">
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{player_name | capitalize }} Stats</title>
+</head>
+<body>
+
+
+    {% if data %}
+        <h1>Stats for {{ player_name | capitalize }}</h1>
+        
+        {% for season, stats in data.items() %}
+            <h2>Season: {{ season }}</h2>
+            <ul>
+                {% for stat_name, stat_value in stats.items() %}
+                    <li> {{ stat_name | replace('_', ' ') | capitalize }}: <b>{{ stat_value}}</b></li>
+                {% endfor %}
+            </ul>
+            <hr>
+        {% endfor %}
+        
+    {% else %}
+        <h1>Player Not Found</h1>
+        <p>Could not find data for **{{ player_name | capitalize }}**.</p>
+    {% endif %}
+
+    
+</body>
+</html>
