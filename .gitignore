@@ -1,0 +1,8 @@
+/__pycache__/
+
+myenv/
+
+playground/
+
+# OS files
+.DS_Store
